@@ -1,9 +1,16 @@
 *** Settings ***
-Documentation     A test suite containing one test that should pass.
+Library    Collections
+
 *** Test Case ***
-Should pass
-	Right condition
+Print sandbox id and 1st global input
+	print sandbox id      ${sandbox.id}
+	print 1st global input		 ${sandbox.global_inputs}
 
 *** Keywords ***
-Right condition
-    Should Be Equal 	0 	0
+print sandbox id
+	[Arguments]    ${id}
+    Log To Console			${id}
+print 1st global input
+	[Arguments]    ${global_inputs}
+	${num} = 	Get From List 	${global_inputs} 	0
+    Log To Console			${num.value}
