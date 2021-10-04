@@ -23,8 +23,8 @@ Print
 	Log	${text}
 
 Print to Sandbox
-	[Arguments]	${sandbox_id}	${message}
-	Write Message	${sandbox_id}	${message}
+	[Arguments]	${message}
+	Write Message	${message}
 
 Sleep for duration
 	[Arguments]	${duration}
