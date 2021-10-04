@@ -10,13 +10,15 @@ ${User}
 ${AuthToken}
 ${Domain}	Global
 ${duration}	5
+${config_file_location}	ftp://192.168.90.202/TeraVM/HTTP_Request.xml
+&{command_params}	config_file_location=${config_file_location}	use_ports_from_reservation=False
 
 *** Test Case ***
 Hello World with Delay
 	Sleep for duration	${duration}
 	Print	Hello World
 	Print to Sandbox	Hello World from the Sandbox Output
-	Load TeraVM Scenario	ftp://192.168.90.202/TeraVM/HTTP_Request.xml
+	Load TeraVM Scenario	&{command_params}
 
 *** Keywords ***
 Print
@@ -32,6 +34,6 @@ Sleep for duration
 	sleep	${duration}s
 
 Load TeraVM Scenario
-	[Arguments]	${config_file_location}
-	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	load_config	config_file_location=${config_file_location}
+	[Arguments]	&{command_params}
+	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	load_config	&{command_params}
 
