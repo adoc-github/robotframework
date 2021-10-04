@@ -2,3 +2,4 @@ invoke >= 0.20
 rellu >= 0.6
 docutils >= 0.14
 robotframework == 3.2.2
+cloudshell-automation-api>=2021.1,<2021.2
