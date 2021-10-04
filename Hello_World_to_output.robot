@@ -24,7 +24,7 @@ Print
 
 Print to Sandbox
 	[Arguments]	${message}
-	Write Message	${message}
+	CloudShellAPILibrary.Write Sandbox Message	${message}
 
 Sleep for duration
 	[Arguments]	${duration}
