@@ -12,14 +12,14 @@ ${Domain}	Global
 ${duration}	5
 ${config_file_location}	ftp://192.168.90.202/TeraVM/HTTP_Request.xml
 ${use_ports_from_reservation}	false
-&{command_params}	config_file_location=${config_file_location}	use_ports_from_reservation=${use_ports_from_reservation}
+#&{command_params}	config_file_location=${config_file_location}	use_ports_from_reservation=${use_ports_from_reservation}
 
 *** Test Case ***
 Hello World with Delay
 	Sleep for duration	${duration}
 	Print	Hello World
 	Print to Sandbox	Hello World from the Sandbox Output
-	Load TeraVM Scenario	&{command_params}
+	Load TeraVM Scenario	&{command_params}=	Create Dictionary	config_file_location=${config_file_location}	use_ports_from_reservation=${use_ports_from_reservation}
 
 *** Keywords ***
 Print
