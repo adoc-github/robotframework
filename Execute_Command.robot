@@ -46,6 +46,7 @@ Start TeraVM Scenario
 
 Stop TeraVM Scenario
 	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	stop_traffic
-	${results} = 	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	get_statistics
-	Log	${results}
+	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	get_statistics
+	${file_path} = 	CloudShellAPILibrary.Get Sandbox File Attachment	Test Group Results.zip
+	Log File	${file_path}
 
