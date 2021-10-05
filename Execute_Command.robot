@@ -1,6 +1,6 @@
 *** Settings ***
-Library           lib/CloudShellAPILibrary.py	${CloudShellAddress}	${User}	${AuthToken}	${Domain}	${sandbox.id}
-
+Library			lib/CloudShellAPILibrary.py	${CloudShellAddress}	${User}	${AuthToken}	${Domain}	${sandbox.id}
+Library			OperatingSystem
 Documentation     A test suite containing one test that sleeps for a while.
 ...		  The suite should pass successfully.
 
@@ -22,7 +22,6 @@ Hello World with Delay
 	Start TeraVM Scenario
 	Sleep for duration	${duration}
 	Stop TeraVM Scenario
-	Sleep for duration	${duration}
 
 *** Keywords ***
 Print
