@@ -1,5 +1,5 @@
 from cloudshell.api.cloudshell_api import CloudShellAPISession, InputNameValue
-from .quali_api_helper import QualiAPISession
+from quali_api_helper import QualiAPISession
 from uuid import UUID
 import os
 
