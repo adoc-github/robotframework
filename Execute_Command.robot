@@ -19,8 +19,8 @@ Hello World with Delay
 	Sleep for duration	${duration}
 	Print	Hello World
 	Print to Sandbox	Hello World from the Sandbox Output
-	&{command_params}=	Create Dictionary	config_file_location=${config_file_location}	use_ports_from_reservation=${use_ports_from_reservation}
-	Load TeraVM Scenario	&{command_params}
+	${command_params}=	Create Dictionary	config_file_location=${config_file_location}	use_ports_from_reservation=${use_ports_from_reservation}
+	Load TeraVM Scenario	${command_params}
 
 *** Keywords ***
 Print
@@ -37,5 +37,5 @@ Sleep for duration
 
 Load TeraVM Scenario
 	[Arguments]	&{command_params}
-	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	load_config	&{command_params}
+	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	load_config	${command_params}
 
