@@ -35,6 +35,6 @@ Sleep for duration
 	sleep	${duration}s
 
 Load TeraVM Scenario
-	[Arguments]	&{command_params}
+	[Arguments]	${command_params}
 	CloudShellAPILibrary.Execute Command	TeraVM Controller Shell 2G	Service	load_config	${command_params}
 
