@@ -22,6 +22,7 @@ Hello World with Delay
 	Start TeraVM Scenario
 	Sleep for duration	${duration}
 	Stop TeraVM Scenario
+	Sleep for duration	${duration}
 
 *** Keywords ***
 Print
